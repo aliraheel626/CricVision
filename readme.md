@@ -1,4 +1,4 @@
-install Python 3.9.13 
+install Python 3.9.13\ 
 install the following python packages
 	ultralytics           8.0.119 
 	matplotlib            3.7.1 
