@@ -8,7 +8,7 @@ import cv2
 def is_present(frame):
     # Implement your logic to check if the object is present in the frame
     # Return True if the object is present, False otherwise
-    model=YOLO('player.pt')
+    model=YOLO('./models/player.pt')
     result=model(frame, verbose=False)
     conf=[]
     for box in result[0].boxes:

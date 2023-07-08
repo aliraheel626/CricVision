@@ -11,7 +11,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from mpl_toolkits.mplot3d import Axes3D
 
 
-from library import open_video,detect,estimate_bowling_side,estimate_release_point,estimate_bounce_point,estimate_impact_point,estimate_trajectory
+from modules.library import open_video,detect,estimate_bowling_side,estimate_release_point,estimate_bounce_point,estimate_impact_point,estimate_trajectory
 
 # to read detections from the csv files
 # detections=pd.read_csv(f'detections/7.2.23/{4}.csv')

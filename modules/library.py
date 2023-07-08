@@ -84,7 +84,7 @@ def suppress_duplicates(detections):
 
 def detect(vid):
     # model=YOLO('v2.pt')
-    model=YOLO('v3.pt')
+    model=YOLO('./models/v3.pt')
     results=model(vid)
     df=pd.DataFrame(columns=["Frame","Class","Confidence","Xmin","Ymin","Xmax","Ymax","Xc","Yc","W","H","A"])
     for result in results:

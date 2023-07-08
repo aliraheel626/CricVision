@@ -1,14 +1,14 @@
 import streamlit as st
-from library import *
-from animation_3D import *
+from modules.library import *
+from modules.animation_3D import *
 import copy
 import cv2
 import numpy as np
 from tqdm import tqdm as tq
 from PIL import Image
 import tempfile
-from Visualization import *
-from trimming import *
+from modules.Visualization import *
+from modules.trimming import *
 import base64
 import time
 from pathlib import Path
@@ -59,7 +59,7 @@ def home():
     video_file = None
     # global process
     with ph.container():
-        backh = imagebase64('backh.jpg')
+        backh = imagebase64('assets/backh.jpg')
         st.markdown(
             f"""
             <style>
@@ -77,9 +77,9 @@ def home():
         mygridc[0][0].title("CricVision")
         mygridc[0][0].markdown("**Cricket Analytics and Estimations**")
         mygrid1 = make_grid(4, 3)
-        mygrid1[0][0].image("GIFbat1.gif")
+        mygrid1[0][0].image("assets/GIFbat1.gif")
         mygridc[0][1].title("Home")
-        mygrid1[0][2].image("wicket.gif")
+        mygrid1[0][2].image("assets/wicket.gif")
         # Add content for the home page
         mygrid1[3][0].title("Video Input")
         # mygrid1[2][0].markdown("Select one option")
@@ -220,7 +220,7 @@ def dashboard():
     global vid
     global detections
     with ph.container():
-        backd = imagebase64('backd.jpg')
+        backd = imagebase64('assets/backd.jpg')
         st.markdown(
             f"""
             <style>
@@ -314,12 +314,12 @@ def dashboard():
             mygrid[1][2].markdown(" **Bowling Side Estimation**")
             bowling_side = estimate_bowling_side(detections)
             if bowling_side == "LEFT":
-                image = Image.open("left.png")
+                image = Image.open("assets/left.png")
                 resized_image = image.resize((1920, 1080))
                 mygrid[1][2].image(resized_image)
                 mygrid[1][2].markdown(bowling_side)
             if bowling_side == "RIGHT":
-                image = Image.open("right.png")
+                image = Image.open("assets/right.png")
                 resized_image = image.resize((1920, 1080))
                 mygrid[1][2].image(resized_image)
                 mygrid[1][2].markdown(bowling_side)
@@ -363,7 +363,7 @@ def dashboard():
             mygrid[3][2].markdown(" **3D Animation of all Estimations**")
             st.set_option('deprecation.showPyplotGlobalUse', False)
             # detections2 = pd.read_csv(f'detections/7.2.23/{4}.csv')
-            gif_file = "animation.gif"
+            gif_file = "assets/animation.gif"
             animation3D(detections, gif_file)
             # ax.plot([1, 2, 3], [4, 5, 6])
             mygrid[3][2].image(gif_file)
@@ -379,7 +379,7 @@ def dashboardstats():
     global vid
     global detections
     with ph.container():
-        backd = imagebase64('backd.jpg')
+        backd = imagebase64('assets/backd.jpg')
         st.markdown(
             f"""
                 <style>

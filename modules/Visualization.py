@@ -4,7 +4,7 @@ from matplotlib.patches import Ellipse, Rectangle
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 
-from library import estimate_bounce_point,estimate_impact_point,estimate_trajectory,estimate_release_point,estimate_bowling_side,estimate_btasman_side
+from modules.library import estimate_bounce_point,estimate_impact_point,estimate_trajectory,estimate_release_point,estimate_bowling_side,estimate_btasman_side
 
 BATSMAN_HEIGHT=191
 CORNER_POINT_A=(-140,0,0)
@@ -394,7 +394,7 @@ def plot_impact1_2D(detections):
     # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     # Load and display the image
-    image_path = 'a.jpg'
+    image_path = './assets/a.jpg'
     image = plt.imread(image_path)
     if estimate_btasman_side(detections) == "RIGHT HANDED BATSMAN":
         ax.imshow(image, extent=[width_scale, -width_scale, -10, total_height])
@@ -996,7 +996,7 @@ def impact_statistics(detectionss):
     # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     # Load and display the image
-    image_path = 'a.jpg'
+    image_path = './assets/a.jpg'
     image = plt.imread(image_path)
     ax.imshow(image, extent=[width_scale, -width_scale, -10, total_height])
 
