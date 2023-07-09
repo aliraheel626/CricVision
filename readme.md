@@ -15,7 +15,7 @@ run the application using "python -m streamlit run main.py"
 1. The user selects one option from the radio buttons.
 >  Single Video Processing \
 >  Batch Video Processing \
-> Video Trimming \
+> Video Trimming
 
 2. the user than uses browse video to select videos or video's from explorer
 
